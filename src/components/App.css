@@ -1,0 +1,113 @@
+.App {
+  padding: 15px;
+  font-family: Roboto, arial, sans-serif;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+.input-wrapper {
+  margin: 15px 0;
+}
+
+label {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+input {
+  padding: 5px;
+  width: 300px;
+}
+
+input,
+label,
+button,
+.input-label {
+  font-size: 24px;
+  transition: all 0.2s linear;
+}
+
+input:required:valid {
+  border-color: green;
+}
+
+input:required ~ .input-label::after {
+  content: ' *';
+}
+
+input.seen:invalid:not(:focus) {
+  border-color: red;
+}
+
+.error-message {
+  font-size: 14px;
+  display: none;
+  order: -1;
+  transition: color 0.2s linear;
+}
+
+input.seen:invalid ~ .error-message {
+  display: block;
+}
+
+input.seen:invalid:not(:focus) ~ .input-label,
+input.seen:invalid::placeholder,
+input.seen:invalid:not(:focus) ~ .error-message {
+  color: red;
+}
+
+button {
+  border-radius: 0;
+  font-size: 18px;
+  padding: 5px 15px;
+}
+
+button:not(:first-of-type) {
+  margin-left: 10px;
+}
+
+form:invalid button[type='submit'] {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+header {
+  border-bottom: 1px solid black;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+nav ul > li {
+  padding: none;
+  font-size: 18px;
+}
+
+nav ul > li:not(:first-of-type) {
+  margin-left: 10px;
+  padding-left: 10px;
+}
+
+nav ul > li:not(:first-of-type)::before {
+  content: '|';
+  position: relative;
+  right: 10px;
+}
+
+nav a,
+nav a:visited {
+  color: blue;
+  text-decoration: none;
+}
+
+nav a.active {
+  border-bottom: 2px solid green;
+  font-weight: bold;
+}
