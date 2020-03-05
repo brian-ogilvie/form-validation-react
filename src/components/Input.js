@@ -10,6 +10,7 @@ export default function Input({
   minLength,
   maxLength,
   label,
+  placeholder,
   errorMessage,
 }) {
   const { formData, seenFields, updateField, markAsSeen } = useContext(
@@ -27,6 +28,7 @@ export default function Input({
           minLength={minLength}
           maxLength={maxLength}
           value={formData[name] || ''}
+          placeholder={placeholder}
           onChange={updateField}
           onBlur={markAsSeen}
           className={seenFields.has(name) ? 'seen' : null}
@@ -42,6 +44,7 @@ Input.propTypes = {
   name: PropTypes.string.isRequired,
   type: PropTypes.string,
   label: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
   errorMessage: PropTypes.string,
   required: PropTypes.bool,
   pattern: PropTypes.string,
@@ -53,6 +56,7 @@ Input.defaultProps = {
   type: 'text',
   required: false,
   pattern: null,
+  placeholder: '',
   errorMessage: null,
   minLength: null,
   maxLength: null,

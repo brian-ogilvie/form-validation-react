@@ -26,6 +26,7 @@ export default function SignUpForm() {
         required
         label="Email Address"
         errorMessage="Please enter a valid email."
+        placeholder="e.g. mike@yahoo.com"
       />
 
       <Input
@@ -33,6 +34,7 @@ export default function SignUpForm() {
         required
         label="Zip Code"
         errorMessage="Please enter a valid zip code."
+        placeholder="enter zip code"
         pattern="^\d{5}(-\d{4})?$"
       />
 

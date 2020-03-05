@@ -26,6 +26,7 @@ export default function LogInForm() {
         required
         label="Email Address"
         errorMessage="Please enter a valid email."
+        placeholder="e.g. mike@yahoo.com"
       />
       <Input
         name="password"
@@ -33,6 +34,7 @@ export default function LogInForm() {
         required
         label="Password"
         errorMessage="Please enter your password."
+        placeholder="enter password"
         minLength={8}
       />
       <button type="submit">Log In</button>
